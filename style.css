@@ -1,0 +1,224 @@
+/* Styles généraux pour le corps de la page */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh; /* Assure que le body occupe au moins toute la hauteur de la fenêtre */
+    display: flex; /* Utilisation de flexbox pour centrer le main verticalement */
+    flex-direction: column; /* Les éléments enfants s'empilent verticalement */
+
+    /* --- Styles pour l'image de fond --- */
+    background-image: url('f02de6ee_6f1b_4941_891f_599ee5f1f19d.webp'); /* Chemin vers votre image (ajuster si dans un sous-dossier comme 'images/') */
+    background-size: cover;          /* L'image couvre toute la zone, sans déformation */
+    background-position: center center; /* L'image est centrée */
+    background-repeat: no-repeat;    /* L'image ne se répète pas */
+    background-attachment: fixed;    /* L'image reste fixe au défilement */
+    background-color: #2c3e50;       /* Couleur de secours si l'image ne charge pas (un bleu-gris foncé) */
+}
+
+/* En-tête de la page */
+header {
+    background-color: rgba(26, 115, 232, 0.85); /* Bleu semi-transparent */
+    color: white;
+    padding: 1.5em 0;
+    text-align: center; /* Centre le texte du titre de l'en-tête */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0; /* Empêche le header de rétrécir */
+}
+
+/* Conteneur principal du contenu (formulaire et profil) */
+main {
+    max-width: 900px; /* Largeur maximale pour le contenu */
+    margin: 2em auto; /* **Centrage horizontal du bloc principal** et marge verticale */
+    padding: 0 1em; /* Un peu d'espace sur les côtés pour les petits écrans */
+    flex-grow: 1; /* Permet au main de prendre l'espace disponible, aidant le footer à rester en bas */
+    display: flex; /* Utilisation de flexbox pour les sections internes */
+    flex-direction: column; /* Sections empilées verticalement */
+    gap: 2em; /* Espace entre les sections du main */
+}
+
+/* Section du formulaire */
+.form-section {
+    background-color: rgba(255, 255, 255, 0.95); /* Fond blanc très légèrement transparent */
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.form-section h2 {
+    text-align: center; /* Centre le titre de la section du formulaire */
+    color: #0d47a1;
+    margin-bottom: 1.5em;
+}
+
+/* Groupes de champs dans le formulaire */
+.profile-form .form-group {
+    margin-bottom: 1.2em;
+}
+
+.profile-form label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-form input[type="text"],
+.profile-form input[type="number"],
+.profile-form input[type="url"],
+.profile-form select,
+.profile-form textarea {
+    width: calc(100% - 20px); /* 100% moins le padding */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box; /* Inclut padding et bordure dans la largeur */
+}
+
+.profile-form textarea {
+    resize: vertical; /* Permet le redimensionnement vertical par l'utilisateur */
+}
+
+.profile-form small {
+    display: block;
+    margin-top: 0.4em;
+    color: #666;
+    font-size: 0.85em;
+}
+
+/* Bouton de soumission du formulaire */
+.profile-form button[type="submit"] {
+    background-color: #28a745; /* Vert pour le bouton d'action */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block; /* S'assure que le bouton est un bloc pour occuper la largeur */
+    width: 100%; /* S'étale sur toute la largeur */
+    margin-top: 2em;
+}
+
+.profile-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* Conteneur du profil généré (initiallement caché) */
+.player-profile-container {
+    background-color: rgba(255, 255, 255, 0.95); /* Fond blanc très légèrement transparent */
+    padding: 2em;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.player-profile-container h2 {
+    text-align: center; /* Centre le titre de la section de profil */
+    color: #0d47a1;
+    margin-bottom: 1.5em;
+}
+
+/* Carte individuelle du profil */
+.profile-card {
+    display: flex;
+    flex-direction: column; /* Les éléments enfants s'empilent verticalement */
+    align-items: center; /* **Centre horizontalement** les éléments enfants (image, titres, paragraphes) */
+    gap: 1.5em; /* Espace entre les éléments */
+}
+
+.profile-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Rend l'image ronde */
+    object-fit: cover; /* Assure que l'image remplit la zone sans être déformée */
+    border: 5px solid #1a73e8; /* Bordure bleue autour de l'image */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card h2 {
+    color: #0d47a1;
+    margin-bottom: 0.5em;
+    font-size: 2.2em;
+}
+
+.profile-card p {
+    font-size: 1.1em;
+    color: #555;
+    margin: 0.5em 0;
+}
+
+.profile-card strong {
+    color: #1a73e8; /* Accentue les étiquettes en bleu */
+}
+
+/* Grille pour les détails (poste, âge, etc.) */
+.details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes égales */
+    gap: 1em 2em; /* Espacement vertical et horizontal */
+    width: 100%;
+    max-width: 600px; /* Limite la largeur de la grille */
+    margin-top: 1.5em;
+    text-align: left; /* Aligne le texte à gauche dans les cellules de la grille */
+}
+
+.details-grid p {
+    margin: 0; /* Supprime les marges par défaut des paragraphes dans la grille */
+}
+
+/* Description de la personnalité */
+.personality-bio {
+    margin-top: 2em;
+    font-style: italic;
+    color: #666;
+    max-width: 700px;
+    line-height: 1.8;
+    text-align: center; /* Centre le texte de la personnalité */
+}
+
+/* Liste de l'équipe de rêve */
+.dream-team-list {
+    margin-top: 0.5em;
+    text-align: center; /* Centre le texte de l'équipe de rêve */
+}
+
+/* Pied de page */
+footer {
+    text-align: center;
+    padding: 1.5em 0;
+    margin-top: 3em; /* Espace au-dessus du footer */
+    background-color: rgba(52, 73, 94, 0.85); /* Bleu gris foncé semi-transparent */
+    color: white;
+    font-size: 0.9em;
+    flex-shrink: 0; /* Empêche le footer de rétrécir */
+}
+
+/* --- Responsive design pour les petits écrans --- */
+@media (max-width: 768px) {
+    main {
+        margin: 1em auto; /* Moins de marge verticale sur mobile */
+    }
+
+    .form-section, .player-profile-container {
+        padding: 1.5em; /* Moins de padding sur mobile */
+    }
+
+    .profile-card img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .profile-card h2 {
+        font-size: 1.8em;
+    }
+
+    .details-grid {
+        grid-template-columns: 1fr; /* Passe à une seule colonne sur mobile */
+        gap: 0.8em;
+        text-align: center; /* Centre le texte dans la grille sur mobile */
+    }
+}

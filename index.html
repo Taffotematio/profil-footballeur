@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer Votre Profil de Footballeur</title>
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <header>
+        <h1>Créez Votre Profil de Footballeur</h1>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Entrez Vos Informations</h2>
+            <form id="playerProfileForm" class="profile-form">
+                <div class="form-group">
+                    <label for="firstName">Prénom :</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Nom :</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Âge :</label>
+                    <input type="number" id="age" min="6" max="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationalité :</label>
+                    <input type="text" id="nationality" placeholder="Ex: Camerounaise" required>
+                </div>
+                <div class="form-group">
+                    <label for="position">Poste Préféré :</label>
+                    <select id="position" required>
+                        <option value="">Sélectionnez un poste</option>
+                        <option value="Gardien">Gardien</option>
+                        <option value="Défenseur">Défenseur</option>
+                        <option value="Milieu">Milieu</option>
+                        <option value="Attaquant">Attaquant</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="favoriteClub">Club Préféré :</label>
+                    <input type="text" id="favoriteClub" placeholder="Ex: Coton Sport de Garoua">
+                </div>
+                <div class="form-group">
+                    <label for="favoritePlayer">Joueur Préféré :</label>
+                    <input type="text" id="favoritePlayer" placeholder="Ex: Samuel Eto'o">
+                </div>
+                <div class="form-group">
+                    <label for="dreamTeam">Équipe de Rêve (Liste de joueurs, séparés par des virgules) :</label>
+                    <textarea id="dreamTeam" rows="3" placeholder="Ex: Messi, Pelé, Zidane, Maradona"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="personality">Décrivez votre personnalité de joueur :</label>
+                    <textarea id="personality" rows="4" placeholder="Ex: Je suis un joueur combatif, leader sur le terrain..."></textarea>
+                </div>
+                 <div class="form-group">
+                    <label for="photoUrl">URL de votre Photo de Profil :</label>
+                    <input type="url" id="photoUrl" placeholder="https://votre-image.com/moi.jpg">
+                    <small>Utilisez une URL directe vers votre image (ex: depuis Imgur, Google Photos partagée, ou un placeholder).</small>
+                </div>
+
+                <button type="submit">Afficher mon Profil</button>
+            </form>
+        </section>
+
+        <section class="player-profile-container" style="display: none;">
+            <h2>Votre Profil de Footballeur</h2>
+            <div id="playerOutputCard" class="profile-card">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mon Profil de Footballeur. Tous droits réservés.</p>
+    </footer>
+
+    <script src="script.js"></script> </body>
+</html>
